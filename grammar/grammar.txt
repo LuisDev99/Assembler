@@ -1,0 +1,12 @@
+Program          := Instructions
+Instructions     := Instruction InstructionPrime
+InstructionPrime := Instruction | Epsilon
+Instruction      := R_Format | Branch_Format | I_Format | LABEL_NAME COLON
+R_Format         := Operation REGISTER COMMA REGISTER COMMA REGISTER 
+Branch_Format    := BEQ REGISTER COMMA REGISTER COMMA LABEL_NAME
+                    | JMP LABEL_NAME
+
+I_Format         := LI REGISTER COMMA Constant
+
+Operation        := ADD | SUB | MUL | SLT | AND | XOR | SRL | SLL
+Constant         := INT_LITERAL | HEX_LITERAL | BIN_LITERAL | CHAR_LITERAL 
