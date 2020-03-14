@@ -1,4 +1,18 @@
-li $r0, 0  //Load 0 to register $r0
+Assembler that translates a custom assembly language into a 24-bit binary code
+
+The binary that this assembler outputs runs on this 24-bit simple processor:
+
+![Loading](/images/processor.png)
+
+
+# Assembly Syntax
+
+## C Program
+![Loading](/images/exampleAlgorithm.png)
+
+## Assembly Equivalent
+```
+    li $r0, 0  //Load 0 to register $r0
     li $r1, 15 //n
     li $r2, 0  //count 
     li $r3, 1  //Load 1 to register $r3
@@ -99,6 +113,17 @@ RETURNCOUNT:
     li $r7, ' '
     li $r7, '!'
     li $r7, '!'
-    li $r7, 10
+    li $r7, 10  //ASCII code of endline
     add $r7, $r0, $r2  //r7 = count
     looper: jmp looper //Create a infinite loop in order for $r7 to keep its state
+```
+
+The assembler will generate a .hex file which contains the hexadecimal representation of the binary code of the assembly program which the processor understands.
+
+## Output: 
+
+![Loading](images/terminalOutput.png)
+
+## Processor output of the program
+
+![Loading](images/program_in_processor.png)
