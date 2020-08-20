@@ -12,10 +12,10 @@
 %option yylineno
 
 
-COMMENT "//".*
+COMMENT "//"[^\n]*
 WHITESPACE [\t\r\f" "]
 
-LABEL_NAME ({LETTER}|"_")({LETTER}|{DIGIT})*
+LABEL_NAME [a-zA-Z0-9_]+
 
 REGISTER ($r[0-9])
 INT_LITERAL {DIGIT}+

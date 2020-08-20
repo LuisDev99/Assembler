@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
     {
         std::cout << "By LuisDev99" << endl;
         std::cout << "Usage: <asm filename> " << std::endl;
-        std::cout << "Arithmetic Instructions: add, sub, mul, slt, and, xor, srl, sll \n";
+        std::cout << "Arithmetic Instructions: add(0), sub(1), mul(2), slt(3), and(4), xor(5), srl(6), sll(7) \n";
         std::cout << "Branching Instructions: jmp, beq \n";
         std::cout << " ------ Syntax example: ------\n";
         std::cout << " Arithmetic: \t add $r0, $r6, $r7 \n";
