@@ -16,17 +16,6 @@
 using namespace std;
 using LabelAddressMap = unordered_map<string, int>;
 
-unordered_map<string, string> instructionToBinaryStrMap = {
-    {"add", "000"},
-    {"sub", "001"},
-    {"mul", "010"},
-    {"slt", "011"},
-    {"and", "100"},
-    {"xor", "101"},
-    {"srl", "110"},
-    {"sll", "111"},
-};
-
 typedef struct Instructio
 {
     string binaryCode;
@@ -313,10 +302,10 @@ private:
                        [](unsigned char c) { return std::tolower(c); });
 
         /* Find the instruction's binary code on the map */
-        auto itr = instructionToBinaryStrMap.find(instruction);
+        auto itr = instructionToBinaryStrMapy.find(instruction);
 
         /* If the current instruction is not on the map, then the instruction is not supported */
-        if (itr == instructionToBinaryStrMap.end())
+        if (itr == instructionToBinaryStrMapy.end())
         {
             cout << "Invalid Instruction found" << endl;
             throw UnexpectedPointReachedException(__func__, __FILE__, __LINE__);

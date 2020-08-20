@@ -1,5 +1,5 @@
-#ifndef TOKENS__
-#define TOKENS__
+#ifndef TOKENS_____
+#define TOKENS_____
 
 #include <unordered_map>
 
@@ -50,6 +50,17 @@ const std::unordered_map<Token, const char *> TokenToStringMap = {
     {Colon, "Colon"},
 
     {ERROR, "PANIC MODE! Lexer"},
+};
+
+const std::unordered_map<std::string, std::string> instructionToBinaryStrMapy = {
+    {"add", "000"},
+    {"sub", "001"},
+    {"mul", "010"},
+    {"slt", "011"},
+    {"and", "100"},
+    {"xor", "101"},
+    {"srl", "110"},
+    {"sll", "111"},
 };
 
 static const char *tokenToStringy(Token tk)
