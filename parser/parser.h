@@ -16,6 +16,17 @@
 using namespace std;
 using LabelAddressMap = unordered_map<string, int>;
 
+unordered_map<string, string> instructionToBinaryStrMap = {
+    {"add", "000"},
+    {"sub", "001"},
+    {"mul", "010"},
+    {"slt", "011"},
+    {"and", "100"},
+    {"xor", "101"},
+    {"srl", "110"},
+    {"sll", "111"},
+};
+
 typedef struct Instructio
 {
     string binaryCode;
@@ -297,53 +308,22 @@ private:
         throw UnexpectedPointReachedException(__func__, __FILE__, __LINE__);
     }
 
-    string encodeALUOperation(string operation)
+    string encodeALUOperation(string instruction)
     {
-        std::transform(operation.begin(), operation.end(), operation.begin(),
+        std::transform(instruction.begin(), instruction.end(), instruction.begin(),
                        [](unsigned char c) { return std::tolower(c); });
 
-        if (operation == "add")
+        /* Find the instruction's binary code on the map */
+        auto itr = instructionToBinaryStrMap.find(instruction);
+
+        /* If the current instruction is not on the map, then the instruction is not supported */
+        if (itr == instructionToBinaryStrMap.end())
         {
-            return "000";
+            cout << "Invalid Instruction found" << endl;
+            throw UnexpectedPointReachedException(__func__, __FILE__, __LINE__);
         }
 
-        if (operation == "sub")
-        {
-            return "001";
-        }
-
-        if (operation == "mul")
-        {
-            return "010";
-        }
-
-        if (operation == "slt")
-        {
-            return "011";
-        }
-
-        if (operation == "and")
-        {
-            return "100";
-        }
-
-        if (operation == "xor")
-        {
-            return "101";
-        }
-
-        if (operation == "srl")
-        {
-            return "110";
-        }
-
-        if (operation == "sll")
-        {
-            return "111";
-        }
-
-        cout << "Invalid Instruction found" << endl;
-        throw UnexpectedPointReachedException(__func__, __FILE__, __LINE__);
+        return itr->second;
     }
 
     bool isTokenRFormat(Token tk)
