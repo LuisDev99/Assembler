@@ -1,6 +1,6 @@
-#line 2 "Scanner.cpp"
+#line 1 "Scanner.cpp"
 
-#line 4 "Scanner.cpp"
+#line 3 "Scanner.cpp"
 
 #define  YY_INT_ALIGNED short int
 
@@ -480,8 +480,8 @@ static const flex_int32_t yy_rule_can_match_eol[24] =
     #include <stdlib.h>
     #include "tokens.h"
 
+#line 483 "Scanner.cpp"
 #line 484 "Scanner.cpp"
-#line 485 "Scanner.cpp"
 
 #define INITIAL 0
 
@@ -492,7 +492,7 @@ static const flex_int32_t yy_rule_can_match_eol[24] =
  */
 #include <unistd.h>
 #endif
-
+    
 #ifndef YY_EXTRA_TYPE
 #define YY_EXTRA_TYPE void *
 #endif
@@ -616,7 +616,7 @@ YY_DECL
 #line 32 "lexer/lexer.l"
 
 
-#line 620 "Scanner.cpp"
+#line 619 "Scanner.cpp"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -799,7 +799,7 @@ YY_RULE_SETUP
 #line 61 "lexer/lexer.l"
 ECHO;
 	YY_BREAK
-#line 803 "Scanner.cpp"
+#line 802 "Scanner.cpp"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 

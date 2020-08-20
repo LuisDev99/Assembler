@@ -4,6 +4,7 @@
         "string": "cpp",
         "unordered_map": "cpp",
         "string_view": "cpp",
-        "iosfwd": "cpp"
+        "iosfwd": "cpp",
+        "iostream": "cpp"
     }
 }
