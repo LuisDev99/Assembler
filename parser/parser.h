@@ -115,8 +115,7 @@ public:
                     throw std::exception();
                 }
 
-                pair<string, int> newLabelAddress(instruction.labelName, addressCount);
-                labelsMap.insert(newLabelAddress);
+                labelsMap.emplace(instruction.labelName, addressCount);
             }
             else
             {
