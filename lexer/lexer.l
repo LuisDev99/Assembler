@@ -45,13 +45,14 @@ DIGIT [0-9]
 ","           { return Comma;                  }
 ":"           { return Colon;                  }
 
-{LABEL_NAME}     { return Label_Name;           }
-{REGISTER}     { return Register;           }
+{REGISTER}       { return Register;           }
 
 {INT_LITERAL}    { return Int_Literal;          }
 {HEX_LITERAL}    { return Hex_Literal;          }
 {BIN_LITERAL}    { return Bin_Literal;          }
 {CHAR_LITERAL}   { return Char_Literal;         }
+
+{LABEL_NAME}     { return Label_Name;           }
 
 {WHITESPACE}    {}
 {COMMENT}       {}
