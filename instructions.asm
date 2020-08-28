@@ -4,7 +4,7 @@ li $r0, 0  //Load 0 to register $r0
     li $r3, 1  //Load 1 to register $r3
 WHILE:
     beq $r1, $r0, RETURNCOUNT 
-    and $r4, $r1, $r3 //n & 1
+    and $r4, $r1, $r3 # n & 1
     add $r2, $r2, $r4 //count = count + (n&1)
     srl $r1, $r1, $r3 //n >>= 1 (n = n >> 1)
     jmp WHILE

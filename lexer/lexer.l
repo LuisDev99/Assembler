@@ -12,7 +12,8 @@
 %option yylineno
 
 
-COMMENT "//"[^\n]*
+COMMENT ("//"|"#")[^\n]*
+
 WHITESPACE [\t\r\f" "]
 
 LABEL_NAME [a-zA-Z0-9_]+
